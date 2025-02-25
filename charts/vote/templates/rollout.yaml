@@ -24,10 +24,10 @@ spec:
       canaryService: {{ include "vote-app.fullname" . }}-canary
       trafficRouting:
         nginx:
-        stableIngress: {{ include "vote-app.fullname" . }}
-        additionalIngressAnnotations:
-          canary-by-header: X-Canary
-          canary-by-header-value: siege
+          stableIngress: {{ .Values.ingress.name }}
+          additionalIngressAnnotations:
+            canary-by-header: X-Canary
+            canary-by-header-value: siege
       steps:
         {{- toYaml .Values.canary.steps | nindent 8 }}
     {{- end }}     
