@@ -1,13 +1,13 @@
 ---
 # values-prod.yaml
-replicaCount: 4
+replicaCount: 2
 
 deploymentStrategy:
   type: canary
 canary:
   steps:
     - setCanaryScale:
-        replicas: 2
+        replicas: 1
     - experiment:
         duration: 3m
         templates:
