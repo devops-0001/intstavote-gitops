@@ -3,7 +3,7 @@
 replicaCount: 2
 image:
   repository: schoolofdevops/vote
-  tag: v3
+  tag: v4
   pullPolicy: Always
 
 resources:
